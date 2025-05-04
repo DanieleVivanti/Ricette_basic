@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ricette di Cucina</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-utensils"></i>
+                <h1>Ricette di Cucina</h1>
+            </div>
+            <button id="addRecipeBtn" class="btn-primary">
+                <i class="fas fa-plus"></i> Nuova Ricetta
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <div class="recipes-container" id="recipesContainer">
+            <!-- Le ricette verranno aggiunte qui dinamicamente -->
+        </div>
+    </main>
+
+    <!-- Modal per aggiungere/modificare ricette -->
+    <div id="recipeModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Nuova Ricetta</h2>
+            <form id="recipeForm">
+                <div class="form-group">
+                    <label for="recipeName">Nome Ricetta</label>
+                    <input type="text" id="recipeName" required>
+                </div>
+                <div class="form-group">
+                    <label for="recipeImage">Immagine</label>
+                    <input type="file" id="recipeImage" accept="image/*" required>
+                    <div id="imagePreview" class="image-preview"></div>
+                </div>
+                <div class="form-group">
+                    <label for="recipeIngredients">Ingredienti</label>
+                    <textarea id="recipeIngredients" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="recipeInstructions">Istruzioni</label>
+                    <textarea id="recipeInstructions" required></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary save-recipe-btn">
+                        <i class="fas fa-save"></i> Salva Ricetta
+                    </button>
+                    <button type="button" class="btn-secondary" onclick="closeRecipeDetails()">
+                        <i class="fas fa-times"></i> Annulla
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
